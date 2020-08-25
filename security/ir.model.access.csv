@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_chamado_chamado,Acces For Chamado,model_chamado_chamado,,1,1,1,1
+access_sede_sede,Acces For Sede,model_sede_sede,,1,1,1,1
+access_os_subcategoria_os_subcategoria,Acces For OSSubCategoria,model_os_subcategoria_os_subcategoria,,1,1,1,1
+access_os_categoria_os_categoria,Acces For OSCategoria,model_os_categoria_os_categoria,,1,1,1,1
+access_holiday_holiday,Acces For Holiday,model_holiday_holiday,,1,1,1,1
+access_execucao_execucao,Acces For Execucao,model_execucao_execucao,,1,1,1,1

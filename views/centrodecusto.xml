@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View Centro de Custo (Form de Criar)-->
+        <record id="centrodecusto_form" model="ir.ui.view">
+            <field name="name">Centro de Custo</field> <!-- Titulo Formulario -->
+            <field name="model">centrodecusto.centrodecusto</field> <!-- nome da classe -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="nome"/>
+                                <field name="descricao"/>
+                            </group>
+                            <group>
+                                <field name="centrodecusto_pai"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View Centro de Custo (Lista de registros)-->
+        <record id="centrodecusto_tree" model="ir.ui.view">
+            <field name="name">Centro de Custo</field>
+            <field name="model">centrodecusto.centrodecusto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nome"/>
+                    <field name="descricao"/>
+                    <field name="centrodecusto_pai"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View Centro de Custo (Ação do Menu) -->
+        <record id="centrodecusto_action" model="ir.actions.act_window">
+            <field name="name">Centro de Custo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">centrodecusto.centrodecusto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu Centro de Custo -->
+        <menuitem id="aba_centrodecusto" name="Centro de Custo" parent="submenu_cadastros" sequence="200" action="centrodecusto_action"/>
+
+    </data>
+</odoo>

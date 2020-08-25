@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template id="template_exec_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <html xmlns="http://www.w3.org/1999/xhtml">
+                                <head><meta charset="utf-8" />
+                                    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                                    <title>Folha Execução</title>
+                                    <link rel="stylesheet" href="/helpecos/static/src/style/custom-os.css"/>
+                                </head>
+                                <body>
+                                    <table class="tg" style="undefined; width: 1000px; margin-left: 2px; margin-top: 2px;">
+                                        <colgroup>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                            <col style="width: 79.5px"/>
+                                        </colgroup>
+                                        <tr>
+                                            <th class="tg-logo" colspan="10"><img class="custom-logo-ecos" src="/helpecos/static/src/img/logo_ecos.png"/></th>
+                                        </tr>
+                                          <tr>
+                                              <th class="tg-center" colspan="10"><h1>RELATÓRIO DE EXECUÇÃO DE SERVIÇOS</h1></th>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-center" colspan="1" rowspan="2">DATA:</td>
+                                            <td class="tg-center" colspan="2" rowspan="2">_____/_____/_____</td>
+                                            <td class="tg-center" colspan="2">HORA DE INÍCIO:</td>
+                                            <td class="tg-center" colspan="2">HORA DE TÉRMINO</td>
+                                            <td class="tg-center" colspan="3">PROTOCOLO:</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-center" colspan="2">:</td>
+                                            <td class="tg-center" colspan="2">:</td>
+                                            <td class="tg-center" colspan="3"><span t-field="o.protocolo"/></td>
+                                          </tr>
+                                          <tr class="custom-line">
+                                            <td class="tg-center" colspan="10">1. IDENTIFICAÇÃO DO SOLICITANTE</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-left" colspan="1">Escola:</td>
+                                            <td class="tg-left" colspan="4"><span t-field="o.cliente"/></td>
+                                            <td class="tg-left" colspan="1">Municipio:</td>
+                                            <td class="tg-left" colspan="4"><span t-field="o.cidade"/></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-left" colspan="1">Endereço:</td>
+                                            <td class="tg-left" colspan="4"><span t-field="o.rua"/></td>
+                                            <td class="tg-left" colspan="1">GRE:</td>
+                                            <td class="tg-left" colspan="4"><span t-field="o.gre"/></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-left" colspan="1">Nome/Resp.:</td>
+                                            <td class="tg-left" colspan="4"><span t-field="o.responsavel"/></td>
+                                            <td class="tg-left" colspan="1">Cargo:</td>
+                                            <td class="tg-left" colspan="4"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-left" colspan="1">Telefone:</td>
+                                            <td class="tg-left" colspan="2"><span t-field="o.telefone"/></td>
+                                            <td class="tg-left" colspan="1">Email:</td>
+                                            <td class="tg-left" colspan="6"><span t-field="o.email"/></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-left" colspan="1">INEP:</td>
+                                            <td class="tg-center" colspan="4"><span t-field="o.inep"/></td>
+                                            <td class="tg-left" colspan="1">Circuito:</td>
+                                            <td class="tg-center" colspan="4"></td>
+                                          </tr>
+                                          <tr class="custom-line">
+                                            <td class="tg-topic" colspan="10">LOCAL DE EXECUÇÃO DO SERVIÇO:</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-center" colspan="10"></td>
+                                          </tr>
+                                          <tr class="custom-line">
+                                            <td class="tg-topic" colspan="10">SERVIÇO REALIZADO: EX: (Problema Nº X -> descrição do problema..., Ação problema Nº X -> descrição da ação..., Status problema Nº X -> descrição do Status...)</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr class="custom-line">
+                                            <td class="tg-topic" colspan="10">OBSERVAÇÕES: exemplo (Nº problema -> descrição, em caso de observação extra apenas descrever)</td>
+                                          </tr>
+                                        <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr class="custom-line">
+                                            <td class="tg-topic" colspan="10">PENDÊNCIAS: exemplo (Nº problema -> descrição, em caso de pendência extra apenas descrever)</td>
+                                          </tr>
+                                        <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr class="custom-line">
+                                            <td class="tg-topic" colspan="10">TÉCNICOS:</td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-line" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-topic" colspan="10"></td>
+                                          </tr>
+                                          <tr>
+                                            <td class="tg-blank-ass-center" colspan="4">_________________________________________<br/>ASSINATURA DO GESTOR / RESPONSÁVEL</td>
+                                            <td class="tg-other-employer" colspan="6"><p class="custom-msg-top">Nome por extenso, RG e CPF de quem acompanhou a visita caso não foi o gestor.</p><br/><span>CARGO: ___________________________<br/><br/>RG: ___________________________ CPF: ___________________________</span></td>
+                                          </tr>
+                                        </table>
+                                </body>
+                            </html>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <report
+            id="report_exec_id"
+            string="Folha Execução"
+            model="chamado.chamado"
+            report_type="qweb-html"
+            file="helpecos.template_exec_id"
+            name="helpecos.template_exec_id"
+        />
+</odoo>

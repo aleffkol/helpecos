@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View OSCategoria (Form de Criar)-->
+        <record id="os_categoria_form" model="ir.ui.view">
+            <field name="name">OSCategoria</field> <!-- Titulo Formulario -->
+            <field name="model">os_categoria.os_categoria</field> <!-- nome da classe -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="nome"/>
+                            <field name="subsidiaria"/>
+                            <field name="departamento"/>
+                            <field name="subcategorias"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View OSCategoria (Lista de registros)-->
+        <record id="os_categoria_tree" model="ir.ui.view">
+            <field name="name">OSCategoria</field>
+            <field name="model">os_categoria.os_categoria</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nome"/>
+                    <field name="subsidiaria"/>
+                    <field name="departamento"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View OSCategoria (Ação do Menu) -->
+        <record id="os_categoria_action" model="ir.actions.act_window">
+            <field name="name">OSCategoria</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">os_categoria.os_categoria</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu OSCategoria -->
+        <menuitem id="submenu_os_categoria" name="Categorias" parent="submenu_listas" sequence="200" action="os_categoria_action"/>
+
+    </data>
+</odoo>

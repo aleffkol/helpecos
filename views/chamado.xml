@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View Chamado (Form de Criar)-->
+        <record id="chamado_form" model="ir.ui.view">
+            <field name="name">Chamado</field> <!-- Titulo Formulario -->
+            <field name="model">chamado.chamado</field> <!-- nome da classe -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <field name="status" widget="statusbar"/>
+                            <button name="voltar" string="Voltar" type="object" class="oe_highlight"/>
+                            <button name="avancar" string="Avançar" type="object" class="oe_highlight"/>
+
+                        </header>
+                        <widget name="web_ribbon" text="Análise" bg_color="bg-danger" attrs="{'invisible': [('status', '!=', 'analise')]}"/>
+                        <widget name="web_ribbon" text="Aberto" bg_color="bg-warning" attrs="{'invisible': [('status', '!=', 'aberto')]}"/>
+                        <widget name="web_ribbon" text="Andamento" bg_color="bg-warning" attrs="{'invisible': [('status', '!=', 'andamento')]}"/>
+                        <widget name="web_ribbon" text="Concluído" bg_color="bg-primary" attrs="{'invisible': [('status', '!=', 'concluido')]}"/>
+                        <widget name="web_ribbon" text="Encerrado" bg_color="bg-success" attrs="{'invisible': [('status', '!=', 'encerrado')]}"/>
+                        <widget name="web_ribbon" text="Pendência" bg_color="bg-dark" attrs="{'invisible': [('status', '!=', 'pendencia')]}"/>
+                        <separator colspan="4" string="Informações Principais"/>
+                        <group>
+                            <group>
+                                <field name="protocolo" readonly="1"/>
+                                <field name="protocolo_see"/>
+                                <field name="cliente"/>
+                                <field name="subsidiaria"/>
+                                <field name="inep"/>
+                                <field name="gre"/>
+                                <field name="responsavel"/>
+                                <field name="email"/>
+                                <field name="contatos"/>
+                                <field name="endereco"/>
+                                <field name="departamento"/>
+                            </group>
+                            <group>
+                                <field name="categoria" domain="[('departamento','=', departamento)]"/>
+                                <field name="sub_categoria" domain="[('categoria_id','=', categoria)]"/>
+                                <field name="sede"/>
+                                <field name="tipo"/>
+                                <field name="problematica"/>
+                                <field name="chamado_relacao"/>
+                                <field name="dt_abertura" attrs="{'invisible': [('departamento', '=', False)]}"/>
+                                <field name="dt_sla_atendimento"/>
+                                <field name="dt_sla_conclusao"/>
+                                <field name="docs_drive"/>
+                            </group>
+                        </group>
+                        <separator colspan="4" string="Andamento do Chamado"/>
+                        <group>
+                            <group>
+                                <field name="int_sla_atendimento"/>
+                                <field name="int_sla_conclusao"/>
+                                <field name="dt_atendimento"/>
+                                <field name="dt_conclusao"/>
+                                <field name="avaliacao"/>
+                            </group>
+                            <group>
+                                <field name="dp_enc_prazo"/>
+                                <field name="sec_enc_prazo"/>
+                                <field name="obs_prevencao"/>
+                                <p><a target="_blank" href="https://www.google.com.br/">Relatório fotográfico</a></p>
+                            </group>
+                        </group>
+                        <separator colspan="4" string="Pré-Venda"/>
+                        <group>
+                            <group>
+                                <field name="prev_data"/>
+                                <field name="prev_nome_contato"/>
+                            </group>
+                            <group>
+                                <field name="prev_tel_contato"/>
+                                <field name="prev_relato"/>
+                            </group>
+                        </group>
+                        <separator colspan="4" string="Execuções"/>
+                        <field name="execucoes"/>
+                        <separator colspan="4" string="Compras"/>
+                        <field name="compras"/>
+                        <separator colspan="4" string="Vendas"/>
+                        <field name="vendas"/>
+                        <separator colspan="4" string="Pós-Venda"/>
+                        <group>
+                            <group>
+                                <field name="posv_data"/>
+                                <field name="posv_nome_contato"/>
+                            </group>
+                            <group>
+                                <field name="posv_tel_contato"/>
+                                <field name="posv_relato"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View Chamados (Lista de registros)-->
+        <record id="chamado_tree" model="ir.ui.view">
+            <field name="name">Chamado</field>
+            <field name="model">chamado.chamado</field>
+            <field name="arch" type="xml">
+                <tree multi_edit="1" decoration-success="status == 'encerrado'" decoration-danger="status == 'analise'">
+                    <field name="status"/>
+                    <field name="protocolo"/>
+                    <field name="protocolo_see"/>
+                    <field name="cliente"/>
+                    <field name="subsidiaria" optional="hide"/>
+                    <field name="inep" optional="hide"/>
+                    <field name="gre" optional="hide"/>
+                    <field name="responsavel" optional="hide"/>
+                    <field name="email" optional="hide"/>
+                    <field name="contatos" optional="hide"/>
+                    <field name="endereco" optional="hide"/>
+                    <field name="departamento" optional="hide"/>
+                    <field name="categoria" optional="hide"/>
+                    <field name="sub_categoria" optional="hide"/>
+                    <field name="sede" optional="hide"/>
+                    <field name="tipo" optional="hide"/>
+                    <field name="problematica" optional="hide"/>
+                    <field name="chamado_relacao" optional="hide"/>
+                    <field name="dt_abertura" optional="hide"/>
+                    <field name="dt_sla_atendimento" optional="hide"/>
+                    <field name="dt_sla_conclusao" optional="hide"/>
+                    <field name="docs_drive" optional="hide"/>
+                    <field name="int_sla_atendimento" optional="hide"/>
+                    <field name="int_sla_conclusao" optional="hide"/>
+                    <field name="dt_atendimento" optional="hide"/>
+                    <field name="dt_conclusao" optional="hide"/>
+                    <field name="avaliacao" optional="hide"/>
+                    <field name="dp_enc_prazo" optional="hide"/>
+                    <field name="sec_enc_prazo" optional="hide"/>
+                    <field name="obs_prevencao" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View Chamado (Ação do Menu) -->
+        <record id="chamado_action" model="ir.actions.act_window">
+            <field name="name">Chamado</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">chamado.chamado</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu Chamado -->
+        <menuitem id="menu_helpecos" name="Helpecos" sequence="200" action="chamado_action"/>
+        <menuitem id="submenu_listas" name="Listas" parent="menu_helpecos" sequence="200" action="chamado_action"/>
+        <menuitem id="submenu_chamados" name="Chamados" parent="submenu_listas" sequence="200" action="chamado_action"/>
+
+    </data>
+</odoo>

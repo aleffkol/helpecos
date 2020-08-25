@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View Sede (Form de Criar)-->
+        <record id="sede_form" model="ir.ui.view">
+            <field name="name">Sede</field> <!-- Titulo Formulario -->
+            <field name="model">sede.sede</field> <!-- nome da classe -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="nome"/>
+                            <field name="subsidiaria"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View Sedes (Lista de registros)-->
+        <record id="sede_tree" model="ir.ui.view">
+            <field name="name">Sede</field>
+            <field name="model">sede.sede</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nome"/>
+                    <field name="subsidiaria"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View Sede (Ação do Menu) -->
+        <record id="sede_action" model="ir.actions.act_window">
+            <field name="name">Sede</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sede.sede</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu Sede -->
+        <menuitem id="submenu_sede" name="Sedes" parent="submenu_listas" sequence="200" action="sede_action"/>
+
+    </data>
+</odoo>

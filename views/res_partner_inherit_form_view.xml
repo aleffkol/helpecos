@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_partner_inherit" model="ir.ui.view">
+        <field name="name">Res Partner Inherit</field>
+        <field name="model">res.partner</field> <!-- _inherit = 'res.partner' do .py criado -->
+        <field name="inherit_id" ref="base.view_partner_form"/> <!-- ref= valor copiado do passo 7 -->
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after"> <!-- position = before ou after -->
+                <field name="responsavel"/> <!-- novo campo do arquivo .py -->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_partner_tree_view_inherit" model="ir.ui.view">
+        <field name="name">Res Partner Tree Inherit</field>
+        <field name="model">res.partner</field> <!-- _inherit = 'res.partner' do .py criado -->
+        <field name="inherit_id" ref="base.view_partner_tree"/> <!-- ref= valor copiado no besouro da lista id externo -->
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="before"> <!-- position = before ou after -->
+                <field name="responsavel"/> <!-- novo campo do arquivo .py -->
+            </xpath>
+        </field>
+    </record>
+</odoo>

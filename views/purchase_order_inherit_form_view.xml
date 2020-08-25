@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_order_inherit" model="ir.ui.view">
+        <field name="name">Purchase Order Inherit</field>
+        <field name="model">purchase.order</field> <!-- _inherit = 'res.partner' do .py criado -->
+        <field name="inherit_id" ref="purchase.purchase_order_form"/> <!-- ref= valor copiado do passo 7 -->
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after"> <!-- position = before ou after -->
+                <field name="chamado_id" invisible="1"/> <!-- novo campo do arquivo .py -->
+            </xpath>
+            <xpath expr="//field[@name='partner_ref']" position="after"> <!-- position = before ou after -->
+                <field name="departamento"/> <!-- novo campo do arquivo .py -->
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_tree_view_inherit" model="ir.ui.view">
+        <field name="name">Purchase Order Tree Inherit</field>
+        <field name="model">purchase.order</field> <!-- _inherit = 'res.partner' do .py criado -->
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/> <!-- ref= valor copiado no besouro da lista id externo -->
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_order']" position="before"> <!-- position = before ou after -->
+                <field name="departamento"/> <!-- novo campo do arquivo .py -->
+            </xpath>
+        </field>
+    </record>
+</odoo>

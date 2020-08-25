@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View Holiday (Form de Criar)-->
+        <record id="holiday_form" model="ir.ui.view">
+            <field name="name">Holiday</field> <!-- Titulo Formulario -->
+            <field name="model">holiday.holiday</field> <!-- nome da classe -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="data"/>
+                            <field name="descricao"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View Holiday (Lista de registros)-->
+        <record id="holiday_tree" model="ir.ui.view">
+            <field name="name">Holiday</field>
+            <field name="model">holiday.holiday</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="data"/>
+                    <field name="descricao"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View Holiday (Ação do Menu) -->
+        <record id="holiday_action" model="ir.actions.act_window">
+            <field name="name">Holiday</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">holiday.holiday</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu Holiday -->
+        <menuitem id="submenu_holiday" name="Holiday" parent="submenu_listas" sequence="200" action="holiday_action"/>
+
+    </data>
+</odoo>

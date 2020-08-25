@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!-- Form View Execucao (Form de Criar)-->
+        <record id="execucao_form" model="ir.ui.view">
+            <field name="name">Execucao</field> <!-- Titulo Formulario -->
+            <field name="model">execucao.execucao</field> <!-- nome da classe -->
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="chamado_id"/>
+                                <field name="subsidiaria"/>
+                                <field name="nome"/>
+                                <field name="hr_inicio"/>
+                                <field name="hr_termino"/>
+                                <field name="tecnicos"/>
+                                <field name="local"/>
+                            </group>
+                            <group>
+                                <field name="servico_realizado"/>
+                                <field name="observacao"/>
+                                <field name="material_usado"/>
+                                <field name="custo_estimado"/>
+                                <field name="pendencias"/>
+                                <field name="possui_pendencia"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View Execucao (Lista de registros)-->
+        <record id="execucao_tree" model="ir.ui.view">
+            <field name="name">Execucao</field>
+            <field name="model">execucao.execucao</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nome"/>
+                    <field name="hr_inicio"/>
+                    <field name="hr_termino"/>
+                    <field name="local"/>
+                    <field name="tecnicos"/>
+                    <field name="servico_realizado"/>
+                    <field name="observacao"/>
+                    <field name="material_usado"/>
+                    <field name="possui_pendencia"/>
+                    <field name="pendencias"/>
+                    <field name="custo_estimado"/>
+                    <field name="chamado_id"/>
+                    <field name="subsidiaria"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action View Execucao (Ação do Menu) -->
+        <record id="execucao_action" model="ir.actions.act_window">
+            <field name="name">Execucao</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">execucao.execucao</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu Execucao -->
+        <menuitem id="submenu_execucao" name="Execução" parent="submenu_listas" sequence="200" action="execucao_action"/>
+
+    </data>
+</odoo>
